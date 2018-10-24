@@ -10,7 +10,7 @@ import com.leavesc.databinding_demo.model.ObservableGoods;
 /**
  * 作者：叶应是叶
  * 时间：2018/5/20 19:51
- * 描述：
+ * 描述：演示双向数据绑定,详情看该类的xml
  */
 public class Main10Activity extends AppCompatActivity {
 

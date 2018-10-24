@@ -14,52 +14,56 @@ import java.util.Random;
 /**
  * 作者：叶应是叶
  * 时间：2018/5/16 21:07
- * 描述：
+ * 描述：数据绑定
+ * -数据类的实例改变后不需要手动调用ViewDataBinding重新设置,需要数据类实现BaseObservable或者数据类内部使用ObservableField
+ * 该示例是继承BaseObservable实现
+ * <p>
+ * 实现数据变化自动驱动 UI 刷新的方式有三种：BaseObservable、ObservableField、ObservableCollection
  */
 public class Main3Activity extends AppCompatActivity {
 
-    private Goods goods;
+	private Goods goods;
 
-    private ActivityMain3Binding activityMain3Binding;
+	private ActivityMain3Binding activityMain3Binding;
 
-    private static final String TAG = "Main3Activity";
+	private static final String TAG = "Main3Activity";
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main3);
-        activityMain3Binding = DataBindingUtil.setContentView(this, R.layout.activity_main3);
-        goods = new Goods("code", "hi", 24);
-        activityMain3Binding.setGoods(goods);
-        activityMain3Binding.setGoodsHandler(new GoodsHandler());
-        goods.addOnPropertyChangedCallback(new Observable.OnPropertyChangedCallback() {
-            @Override
-            public void onPropertyChanged(Observable sender, int propertyId) {
-                if (propertyId == com.leavesc.databinding_demo.BR.name) {
-                    Log.e(TAG, "BR.name");
-                } else if (propertyId == com.leavesc.databinding_demo.BR.details) {
-                    Log.e(TAG, "BR.details");
-                } else if (propertyId == com.leavesc.databinding_demo.BR._all) {
-                    Log.e(TAG, "BR._all");
-                } else {
-                    Log.e(TAG, "未知");
-                }
-            }
-        });
-    }
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main3);
+		activityMain3Binding = DataBindingUtil.setContentView(this, R.layout.activity_main3);
+		goods = new Goods("code", "hi", 24);
+		activityMain3Binding.setGoods(goods);
+		activityMain3Binding.setGoodsHandler(new GoodsHandler());
+		goods.addOnPropertyChangedCallback(new Observable.OnPropertyChangedCallback() {
+			@Override
+			public void onPropertyChanged(Observable sender, int propertyId) {
+				if (propertyId == com.leavesc.databinding_demo.BR.name) {
+					Log.e(TAG, "BR.name");
+				} else if (propertyId == com.leavesc.databinding_demo.BR.details) {
+					Log.e(TAG, "BR.details");
+				} else if (propertyId == com.leavesc.databinding_demo.BR._all) {
+					Log.e(TAG, "BR._all");
+				} else {
+					Log.e(TAG, "未知");
+				}
+			}
+		});
+	}
 
-    public class GoodsHandler {
+	public class GoodsHandler {
 
-        public void changeGoodsName() {
-            goods.setName("code" + new Random().nextInt(100));
-            goods.setPrice(new Random().nextInt(100));
-        }
+		public void changeGoodsName() {
+			goods.setName("code" + new Random().nextInt(100));
+			goods.setPrice(new Random().nextInt(100));
+		}
 
-        public void changeGoodsDetails() {
-            goods.setDetails("hi" + new Random().nextInt(100));
-            goods.setPrice(new Random().nextInt(100));
-        }
+		public void changeGoodsDetails() {
+			goods.setDetails("hi" + new Random().nextInt(100));
+			goods.setPrice(new Random().nextInt(100));
+		}
 
-    }
+	}
 
 }

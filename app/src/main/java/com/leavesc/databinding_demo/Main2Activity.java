@@ -10,7 +10,8 @@ import com.leavesc.databinding_demo.model.User;
 /**
  * 作者：叶应是叶
  * 时间：2018/5/16 20:22
- * 描述：
+ * 描述：数据绑定
+ * -基础用法,数据改变后需要手动调用ViewDataBinding重新设置
  */
 public class Main2Activity extends AppCompatActivity {
 

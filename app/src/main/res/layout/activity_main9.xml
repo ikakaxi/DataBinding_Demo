@@ -17,6 +17,8 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="changeFlag"
+            android:textColor="@{flag ? @color/yellow:@color/blue}"
             android:paddingLeft="@{flag ? @dimen/paddingBig:@dimen/paddingSmall}"
             android:text='@{@string/format("leavesC", "Ye")}'
             android:textAllCaps="false" />

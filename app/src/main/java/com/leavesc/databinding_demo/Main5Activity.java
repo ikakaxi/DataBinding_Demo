@@ -12,39 +12,41 @@ import com.leavesc.databinding_demo.model.User;
 /**
  * 作者：叶应是叶
  * 时间：2018/5/16 22:32
- * 描述：
+ * 描述：事件绑定
+ * <p>
+ * 事件绑定也是一种变量绑定，只不过设置的变量是回调接口而已
  */
 public class Main5Activity extends AppCompatActivity {
 
-    private ActivityMain5Binding activityMain5Binding;
+	private ActivityMain5Binding activityMain5Binding;
 
-    private User user;
+	private User user;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        activityMain5Binding = DataBindingUtil.setContentView(this, R.layout.activity_main5);
-        user = new User("leavesC", "12345");
-        activityMain5Binding.setUserInfo(user);
-        activityMain5Binding.setUserPresenter(new UserPresenter());
-    }
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		activityMain5Binding = DataBindingUtil.setContentView(this, R.layout.activity_main5);
+		user = new User("leavesC", "12345");
+		activityMain5Binding.setUserInfo(user);
+		activityMain5Binding.setUserPresenter(new UserPresenter());
+	}
 
-    public class UserPresenter {
+	public class UserPresenter {
 
-        public void onUserNameClick(User user) {
-            Toast.makeText(Main5Activity.this, "用户名：" + user.getName(), Toast.LENGTH_SHORT).show();
-        }
+		public void onUserNameClick(User user) {
+			Toast.makeText(Main5Activity.this, "用户名：" + user.getName(), Toast.LENGTH_SHORT).show();
+		}
 
-        public void afterTextChanged(Editable s) {
-            user.setName(s.toString());
-            activityMain5Binding.setUserInfo(user);
-        }
+		public void afterTextChanged(Editable s) {
+			user.setName(s.toString());
+			activityMain5Binding.setUserInfo(user);
+		}
 
-        public void afterUserPasswordChanged(Editable s) {
-            user.setPassword(s.toString());
-            activityMain5Binding.setUserInfo(user);
-        }
+		public void afterUserPasswordChanged(Editable s) {
+			user.setPassword(s.toString());
+			activityMain5Binding.setUserInfo(user);
+		}
 
-    }
+	}
 
 }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,73 +14,75 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="startActivity2"
-            android:text="单向数据绑定" />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="startActivity10"
-            android:text="双向数据绑定" />
+            android:text="单向数据绑定-2"/>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="startActivity3"
-            android:text="BaseObservable"
-            android:textAllCaps="false" />
+            android:text="BaseObservable-3"
+            android:textAllCaps="false"/>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="startActivity4"
-            android:text="ObservableField"
-            android:textAllCaps="false" />
+            android:text="ObservableField-4"
+            android:textAllCaps="false"/>
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="startActivity12"
-            android:text="ObservableCollection"
-            android:textAllCaps="false" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="startActivity5"
-            android:text="事件绑定" />
+            android:text="事件绑定-5"/>
+
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="startActivity6"
-            android:text="viewStub 和 include"
-            android:textAllCaps="false" />
+            android:text="viewStub 和 include-6"
+            android:textAllCaps="false"/>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="startActivity7"
-            android:text="其他数据类型" />
+            android:text="其他数据类型-7"/>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="startActivity8"
-            android:text="BindingAdapter 和 BindingConversion"
-            android:textAllCaps="false" />
+            android:text="BindingAdapter 和 BindingConversion-8"
+            android:textAllCaps="false"/>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="startActivity9"
-            android:text="引用资源" />
+            android:text="引用资源-9"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="startActivity10"
+            android:text="双向数据绑定-10"/>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="startActivity11"
-            android:textAllCaps="false"
-            android:text="Fragment" />
+            android:text="Fragment-11"
+            android:textAllCaps="false"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="startActivity12"
+            android:text="ObservableCollection-12"
+            android:textAllCaps="false"/>
 
     </LinearLayout>
 </ScrollView>

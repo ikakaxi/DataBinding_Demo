@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+/**
+ * https://juejin.im/post/5b02cf8c6fb9a07aa632146d#comment
+ */
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -27,10 +30,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void startActivity4(View view) {
         startActivity(Main4Activity.class);
-    }
-
-    public void startActivity12(View view) {
-        startActivity(Main12Activity.class);
     }
 
     public void startActivity5(View view) {
@@ -59,6 +58,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void startActivity11(View view) {
         startActivity(Main11Activity.class);
+    }
+
+    public void startActivity12(View view) {
+        startActivity(Main12Activity.class);
     }
 
 }
